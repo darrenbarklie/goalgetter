@@ -10,7 +10,6 @@ import {
 //import { getGoalById } from "./goal/index";
 
 const app = new Elysia();
-const appVersion = 'v0.0.0a';
 
 // Database
 //const client = createClient({ 
@@ -21,8 +20,7 @@ const appVersion = 'v0.0.0a';
 
 // Meta
 app.get("/", () => "GoalGetter API");
-app.get("/version", () => appVersion);
-app.get("/test", () => "Test OK");
+app.get("/version", () => "v0.0.0");
 
 // Users
 //app.get("/user", () => getAllUsers());
@@ -51,6 +49,6 @@ app.get("/test", () => "Test OK");
 app.listen(3000);
 
 console.log(
-  `🦊 GoalGetter API ${appVersion} is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
 );
 
