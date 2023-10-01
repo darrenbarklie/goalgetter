@@ -19,8 +19,8 @@ const app = new Elysia();
 //export const db = drizzle(client);
 
 // Meta
-app.get("/", () => "GoalGetter API v0.0.0b");
-app.get("/version", () => "v0.0.0b");
+app.get("/", () => `GoalGetter API ${process.env.APP_VERSION}`);
+app.get("/version", () => `${process.env.APP_VERSION}`);
 
 // Users
 //app.get("/user", () => getAllUsers());
@@ -51,4 +51,3 @@ app.listen(3000);
 console.log(
   `🦊 Elysia is running GoalGetter API v0.0.0b at ${app.server?.hostname}:${app.server?.port}`
 );
-
