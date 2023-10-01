@@ -1,5 +1,5 @@
 import { db } from "../index";
-import { User, users } from "../db/users";
+import { User, users } from "../db/user";
 
 export const getAllUsers = async () => {
   const result: User[] = await db.select().from(users).all();

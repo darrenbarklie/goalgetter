@@ -1,56 +1,43 @@
 import { 
-  //Context, 
   Elysia 
 } from "elysia";
-//import { swagger } from '@elysiajs/swagger'
-//import { drizzle } from 'drizzle-orm/libsql';
-//import { createClient } from '@libsql/client';
+import { swagger } from '@elysiajs/swagger'
+import { drizzle } from 'drizzle-orm/libsql';
+import { createClient } from '@libsql/client';
 
-//import { getAllUsers, getUserById } from "./user/index";
-//import { getGoalById } from "./goal/index";
+import { getAllUsers, getUserById } from "./user/index";
+import { getAllGoals, getGoalById } from "./goal/index";
+
+import { User } from "./db/user";
+import { Goal } from "./db/goal";
 
 const app = new Elysia();
-const appVersion = 'v0.0.0b';
 
 // Database
-//const client = createClient({ 
-//    url: Bun.env.DATABASE_URL as string,
-//    authToken: Bun.env.DATABASE_AUTH_TOKEN
-//});
-//export const db = drizzle(client);
+const client = createClient({ 
+    url: process.env.DATABASE_URL as string,
+    authToken: process.env.DATABASE_AUTH_TOKEN
+});
+export const db = drizzle(client);
 
 // Meta
-app.get("/", () => "GoalGetter API");
-app.get("/version", () => appVersion);
-app.get("/test", () => "Test OK");
+app.get("/", () => `GoalGetter API ${process.env.APP_VERSION}`);
+app.get("/version", () => `${process.env.APP_VERSION}`);
 
 // Users
-//app.get("/user", () => getAllUsers());
-//app.get("/user/:id", ({ params: { id } }: {params: { id: number} }) => getUserById(id))
+app.get("/user", () => getAllUsers());
+app.get("/user/:id", ({ id }: User) => getUserById(id));
 
 // Goals
-//app.get("/goal", () => ({
-//  goals: [
-//    { "id": 1, "title": "Build API" },
-//    { "id": 2, "title": "Connect to Turso"},
-//    { "id": 3, "title": "Deploy to Fly.io"}
-//  ]
-//}))
-//app.get("/goal/:id", ({ params: { id } }: {params: { id: number} }) => getGoalById(id));
-//app.post("/goal", ({ body }: Context) => {
-//  return `
-//    Received request:
-//      ${JSON.stringify(body)}
-//  `
-//});
+app.get("/goal", () => getAllGoals());
+app.get("/goal/:id", ({ id }: Goal) => getGoalById(id));
 
 // Middleware
-//app.use(swagger());
+app.use(swagger());
 
 // Serve
 app.listen(3000);
 
 console.log(
-  `🦊 GoalGetter API ${appVersion} is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running GoalGetter API ${process.env.APP_VERSION} at ${app.server?.hostname}:${app.server?.port}`
 );
-
