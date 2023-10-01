@@ -10,7 +10,7 @@ import {
 //import { getGoalById } from "./goal/index";
 
 const app = new Elysia();
-const appVersion = 'v0.0.0a';
+const appVersion = 'v0.0.0b';
 
 // Database
 //const client = createClient({ 

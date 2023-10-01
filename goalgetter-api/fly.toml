@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for goalgetter-api on 2023-09-30T19:13:56+01:00
+# fly.toml app configuration file generated for goalgetter-api on 2023-10-01T19:47:54+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -7,9 +7,6 @@ app = "goalgetter-api"
 primary_region = "lhr"
 
 [build]
-
-[deploy]
-  strategy = "immediate"
 
 [http_service]
   internal_port = 3000
