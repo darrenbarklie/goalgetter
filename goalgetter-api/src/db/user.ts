@@ -1,8 +1,8 @@
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
  
 export const users = sqliteTable('user', {
-    id: integer('id').primaryKey({ autoIncrement: true }),
-    emailAddress: text('email_address'),
+    id: integer('id').primaryKey({ autoIncrement: true }).notNull(),
+    emailAddress: text('email_address').notNull(),
     totalLogins: integer('total_logins'),
   },
 );

@@ -5,7 +5,7 @@ import { swagger } from '@elysiajs/swagger'
 import { drizzle } from 'drizzle-orm/libsql';
 import { createClient } from '@libsql/client';
 
-import { getAllUsers, getUserById } from "./user/index";
+import { getAllUsers, getUserById, getAllUsersAndGoals } from "./user/index";
 import { getAllGoals, getGoalById } from "./goal/index";
 
 import { User } from "./db/user";
@@ -27,6 +27,7 @@ app.get("/version", () => `${process.env.APP_VERSION}`);
 // Users
 app.get("/user", () => getAllUsers());
 app.get("/user/:id", ({ id }: User) => getUserById(id));
+app.get("/user/goals", () => getAllUsersAndGoals());
 
 // Goals
 app.get("/goal", () => getAllGoals());
