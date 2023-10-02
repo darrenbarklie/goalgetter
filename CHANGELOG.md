@@ -22,3 +22,6 @@
 ## [v0.0.0f] 2 Oct 2023
 - Create new Solid Start application with `pnpm`
 - Deploy to Bun as `v0.0.0f`
+
+## [v0.0.0g] 3 Oct 2023
+- Successfully render data from API service in Solid frontend
