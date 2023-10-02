@@ -15,4 +15,10 @@
 - Successfully ran a fresh test deployment and update `test-node-express`
 - Reinit GoalGetter API service, fresh Dockerfile and fly.toml generation
 - Successfully (re)deploy `v0.0.0a` and update to `v0.0.0b` to Fly.io
+- Fetch users from Turso database as `v0.0.0c`
+- Fetch goals from Turso database as `v0.0.0d`
+- Polish types, codebase, deploy as `v0.0.0e`
 
+## [v0.0.0f] 2 Oct 2023
+- Create new Solid Start application with `pnpm`
+- Deploy to Bun as `v0.0.0f`
