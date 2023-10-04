@@ -25,3 +25,6 @@
 
 ## [v0.0.0g] 3 Oct 2023
 - Successfully render data from API service in Solid frontend
+
+## [v0.0.0h] 4 Oct 2023
+- Successfully render joined data across user and goals by user.id

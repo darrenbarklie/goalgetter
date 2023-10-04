@@ -13,6 +13,6 @@ export const getUserById = (id: number) => {
 }
 
 export const getAllUsersAndGoals = async () => {
-  const result: User[] = await db.select().from(users).leftJoin(goals, eq(users.id, goals.userId));
+  const result: any[] = await db.select().from(users).leftJoin(goals, eq(users.id, goals.userId));
   return result;
 }

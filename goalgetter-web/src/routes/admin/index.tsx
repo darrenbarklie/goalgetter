@@ -15,11 +15,19 @@ export function routeData() {
     return await response.json() as Goal[];
   });
 
-  return { users, goals };
+  const [userWithGoals] = createResource(async () => {
+    const response = await fetch("https://goalgetter-api.fly.dev/user/goals");
+    console.log("--------------------------");
+    console.log(response);
+    return await response.json() as any[];
+  })
+
+
+  return { users, goals, userWithGoals };
 }
 
 export default function Admin() {
-  const { users, goals } = useRouteData<typeof routeData>();
+  const { users, goals, userWithGoals } = useRouteData<typeof routeData>();
   
   return (
     <>
@@ -41,6 +49,16 @@ export default function Admin() {
         <ul>
           <For each={goals()}>
             {(item) => <li>{item.id} {item.title} {item.description}</li>}
+          </For>
+        </ul>
+
+        <hr />
+
+        <h2>User with Goals</h2>
+        
+        <ul>
+          <For each={userWithGoals()}>
+            {(item) => <li>{item.user.id} {item.user.name} {item.goal.title}</li>}
           </For>
         </ul>
       </div>
