@@ -3,6 +3,10 @@
 ## [v0.0.0i] 11 Nov 2023
 
 - Migrate goalgetter-web to Solid Start v0.3.10
+- Test deploy goalgetter-web to Fly.io
+- Integrate `SiteTitleExtended` component
+
+- ...env variables
 
 ## [v0.0.0h] 4 Oct 2023
 
