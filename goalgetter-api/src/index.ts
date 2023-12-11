@@ -1,4 +1,5 @@
 import { Elysia } from "elysia";
+import { cors } from "@elysiajs/cors";
 import { swagger } from "@elysiajs/swagger";
 import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
@@ -18,9 +19,17 @@ const client = createClient({
 });
 export const db = drizzle(client);
 
+app.use(
+  cors({
+    origin: /\*.localhost:3000$/,
+  })
+);
+
 // Meta
 app.get("/", () => `GoalGetter API ${process.env.APP_VERSION}`);
-app.get("/version", () => `${process.env.APP_VERSION}`);
+app.get("/version", () => ({
+  version: process.env.APP_VERSION,
+}));
 
 // Users
 app.get("/user", () => getAllUsers());

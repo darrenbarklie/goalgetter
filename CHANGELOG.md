@@ -5,6 +5,7 @@
 - Migrate goalgetter-web to Solid Start v0.3.10
 - Test deploy goalgetter-web to Fly.io
 - Integrate `SiteTitleExtended` component
+- Add Layout, global Footer, copyright notice
 
 - ...env variables
 

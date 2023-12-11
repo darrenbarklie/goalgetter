@@ -19,6 +19,9 @@ dependencies:
     version: 0.3.10(@solidjs/meta@0.29.1)(@solidjs/router@0.8.4)(solid-js@1.8.5)(solid-start-node@0.3.10)(vite@4.5.0)
 
 devDependencies:
+  '@types/node':
+    specifier: ^20.9.0
+    version: 20.9.0
   autoprefixer:
     specifier: ^10.4.15
     version: 10.4.16(postcss@8.4.31)
@@ -36,7 +39,7 @@ devDependencies:
     version: 4.9.5
   vite:
     specifier: ^4.4.9
-    version: 4.5.0
+    version: 4.5.0(@types/node@20.9.0)
 
 packages:
 
@@ -1702,6 +1705,11 @@ packages:
   /@types/ms@0.7.34:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
+  /@types/node@20.9.0:
+    resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==}
+    dependencies:
+      undici-types: 5.26.5
+
   /@types/resolve@1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
@@ -2991,7 +2999,7 @@ packages:
       sirv: 2.0.3
       solid-start: 0.3.10(@solidjs/meta@0.29.1)(@solidjs/router@0.8.4)(solid-js@1.8.5)(solid-start-node@0.3.10)(vite@4.5.0)
       terser: 5.24.0
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3063,7 +3071,7 @@ packages:
       solid-start-node: 0.3.10(solid-start@0.3.10)(vite@4.5.0)
       terser: 5.24.0
       undici: 5.27.2
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.9.0)
       vite-plugin-inspect: 0.7.42(rollup@3.29.4)(vite@4.5.0)
       vite-plugin-solid: 2.7.2(solid-js@1.8.5)(vite@4.5.0)
       wait-on: 6.0.1(debug@4.3.4)
@@ -3230,6 +3238,9 @@ packages:
     hasBin: true
     dev: true
 
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
   /undici@5.27.2:
     resolution: {integrity: sha512-iS857PdOEy/y3wlM3yRp+6SNQQ6xU0mmZcwRSriqk+et/cwWAtwmIGf6WkoDN2EK/AMdCO/dfXzIwi+rFMrjjQ==}
     engines: {node: '>=14.0'}
@@ -3310,7 +3321,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.9.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -3328,12 +3339,12 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.5
       solid-refresh: 0.5.3(solid-js@1.8.5)
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.9.0)
       vitefu: 0.2.5(vite@4.5.0)
     transitivePeerDependencies:
       - supports-color
 
-  /vite@4.5.0:
+  /vite@4.5.0(@types/node@20.9.0):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3361,6 +3372,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.9.0
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
@@ -3375,7 +3387,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0
+      vite: 4.5.0(@types/node@20.9.0)
 
   /wait-on@6.0.1(debug@4.3.4):
     resolution: {integrity: sha512-zht+KASY3usTY5u2LgaNqn/Cd8MukxLGjdcZxT2ns5QzDmTFc4XoWBgC+C/na+sMRZTuVygQoMYwdcVjHnYIVw==}
