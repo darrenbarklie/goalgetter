@@ -1,18 +1,16 @@
 /* @refresh reload */
-import { JSX, ParentProps } from "solid-js";
+import { ParentProps } from "solid-js";
 import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 
+const root = document.getElementById("root");
+import "./index.css";
+
+import Layout from "./components/_globals/layout/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import About from "./pages/about/About";
 import Goals from "./pages/goals/Goals";
 import Account from "./pages/account/Account";
-
-import "./index.css";
-import Header from "./components/_globals/header/Header";
-import Footer from "./components/_globals/footer/Footer";
-
-const root = document.getElementById("root");
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(
@@ -22,10 +20,8 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 const App = (props: ParentProps) => (
   <>
-    <div>
-      <Header />
-      {props.children}
-      <Footer />
+    <div id="app">
+      <Layout>{props.children}</Layout>
     </div>
   </>
 );
