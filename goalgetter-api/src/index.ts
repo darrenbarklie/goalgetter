@@ -21,7 +21,15 @@ export const db = drizzle(client);
 
 app.use(
   cors({
-    origin: /\*.localhost:3000$/,
+    origin: (request: Request): boolean => {
+      const origin = request.headers.get("origin");
+      if (!origin) {
+        return false;
+      }
+
+      const allowedOrigins = Bun.env.CORS_ALLOWED_DOMAINS?.split(", ") || [];
+      return allowedOrigins.includes(origin);
+    },
   })
 );
 
