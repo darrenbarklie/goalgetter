@@ -4,12 +4,13 @@ import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 
 const root = document.getElementById("root");
-import "./index.css";
+import "flowbite";
 
 import Layout from "./components/_globals/layout/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
-import About from "./pages/about/About";
 import Goals from "./pages/goals/Goals";
+import Community from "./pages/community/Community";
+import About from "./pages/about/About";
 import Account from "./pages/account/Account";
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -19,11 +20,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 const App = (props: ParentProps) => (
-  <>
-    <div id="app">
-      <Layout>{props.children}</Layout>
-    </div>
-  </>
+  <div id="app">
+    <Layout>{props.children}</Layout>
+  </div>
 );
 
 render(
@@ -31,6 +30,7 @@ render(
     <Router root={App}>
       <Route path="/" component={Dashboard} />
       <Route path="/goals" component={Goals} />
+      <Route path="/community" component={Community} />
       <Route path="/about" component={About} />
       <Route path="/account" component={Account} />
     </Router>
