@@ -1,17 +1,28 @@
 # CHANGELOG
 
+## [v0.0.0h] 19 Dec 2023
+
+- Integrate Solid Router v0.10.1
+- Configure CORS with environment variables
+- Fetch with Solid `createResource` API
+- Reboot frontend with SolidJS vanilla for CSR
+- Integrate Tailwind for utility class styling
+- Configure Tailwind with custom environment variables
+- Design base tenant themes with Tailwind config files
+- Integrate Flowbite for utility component styling
+- Integrate Layout, Header, Navigation, NavigationLink, Brand components
+
 ## [v0.0.0i] 11 Nov 2023
 
 - Migrate goalgetter-web to Solid Start v0.3.10
 - Test deploy goalgetter-web to Fly.io
 - Integrate `SiteTitleExtended` component
 - Add Layout, global Footer, copyright notice
-
-- ...env variables
+- Configure environment variables
 
 ## [v0.0.0h] 4 Oct 2023
 
-- Successfully render joined data across user and goals by user.id
+- Successfully render joined data across user and goals by `user.id`
 
 ## [v0.0.0g] 3 Oct 2023
 
@@ -42,4 +53,4 @@
 - `create table users(id number, email text, total_logins integer);`
 - `insert into users values ('001', 'mail@daz.dev', '0');`
 - `bunx dockerfile`
-- Successfully deploy `v0.0.0` to Fly
+- Successfully deploy `v0.0.0` to Fly.io
