@@ -22,6 +22,8 @@ export default function Layout(props: ParentProps) {
       import("../../../index.css");
   }
 
+  // import("../../../index.css");
+
   return (
     <>
       <Header />
