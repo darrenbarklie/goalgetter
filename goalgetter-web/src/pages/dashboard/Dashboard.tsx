@@ -1,13 +1,13 @@
 export default function Home() {
-  const changeTheme = (theme: string) => {
-    document.querySelector("html")?.setAttribute("data-theme", theme);
-  };
+  // const changeTheme = (theme: string) => {
+  //   document.querySelector("html")?.setAttribute("data-theme", theme);
+  // };
 
   return (
     <>
       <div class="h-screen grid place-items-center bg-primary-100">
         <div>
-          <button
+          {/* <button
             class="border py-2 px-8 bg-buttons text-typography m-2"
             onClick={() => changeTheme("light")}
           >
@@ -18,7 +18,7 @@ export default function Home() {
             onClick={() => changeTheme("dark")}
           >
             Theme Dark
-          </button>
+          </button> */}
         </div>
       </div>
     </>
