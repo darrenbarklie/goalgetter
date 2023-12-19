@@ -4,7 +4,6 @@ import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 
 const root = document.getElementById("root");
-import "./index.css";
 
 import Layout from "./components/_globals/layout/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -19,11 +18,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 const App = (props: ParentProps) => (
-  <>
-    <div id="app">
-      <Layout>{props.children}</Layout>
-    </div>
-  </>
+  <div id="app">
+    <Layout>{props.children}</Layout>
+  </div>
 );
 
 render(
