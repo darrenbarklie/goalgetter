@@ -4,8 +4,9 @@ import { swagger } from "@elysiajs/swagger";
 import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
 
-import { getAllUsers, getUserById, getAllUsersAndGoals } from "./user/index";
-import { getAllGoals, getGoalById } from "./goal/index";
+import { UserSignUp, signInUser, signUpUser } from "./auth";
+import { getAllUsers, getUserById, getAllUsersAndGoals } from "./users/index";
+import { getAllGoals, getGoalById } from "./goals/index";
 
 import { User } from "./db/user";
 import { Goal } from "./db/goal";
@@ -39,13 +40,17 @@ app.get("/version", () => ({
   version: process.env.APP_VERSION,
 }));
 
+// Auth
+app.post("/auth/signup", ({ body }) => signUpUser(body as UserSignUp));
+app.post("/auth/signin", () => signInUser());
+
 // Users
-app.get("/user", () => getAllUsers());
+app.get("/users", () => getAllUsers());
 // app.get("/user/:id", ({ id }: User) => getUserById(id));
-app.get("/user/goals", () => getAllUsersAndGoals());
+// app.get("/users/goals", () => getAllUsersAndGoals());
 
 // Goals
-app.get("/goal", () => getAllGoals());
+app.get("/goals", () => getAllGoals());
 // app.get("/goal/:id", ({ id }: Goal) => getGoalById(id));
 
 // Middleware
