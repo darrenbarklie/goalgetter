@@ -22,6 +22,7 @@ export const auth = lucia({
     return {
       emailAddress: databaseUser.email_address,
       totalLogins: databaseUser.total_logins,
+      dateTimeCreated: databaseUser.date_time_created,
     };
   },
 

@@ -17,9 +17,10 @@ export const signUpUser = async ({ emailAddress, password }: UserSignUp) => {
       attributes: {
         email_address: emailAddress,
         total_logins: 0,
+        date_time_created: new Date(),
       }, // expects `Lucia.DatabaseUserAttributes`
     });
-    console.log(`Created user: ${user}`);
+    console.log(`Created user: ${JSON.stringify(user)}`);
     return {
       status: "success",
       user: user,

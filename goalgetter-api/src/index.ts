@@ -5,11 +5,8 @@ import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
 
 import { UserSignUp, signInUser, signUpUser } from "./auth";
-import { getAllUsers, getUserById, getAllUsersAndGoals } from "./users/index";
-import { getAllGoals, getGoalById } from "./goals/index";
-
-import { User } from "./db/user";
-import { Goal } from "./db/goal";
+import { getAllUsers } from "./users/index";
+import { getAllGoals } from "./goals/index";
 
 const app = new Elysia();
 
@@ -20,6 +17,7 @@ const client = createClient({
 });
 export const db = drizzle(client);
 
+// CORS
 app.use(
   cors({
     origin: (request: Request): boolean => {

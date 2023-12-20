@@ -3,21 +3,24 @@
   "version": "0.0.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "drizzle:generate": "drizzle-kit generate:sqlite",
+    "drizzle:introspect": "drizzle-kit introspect:sqlite",
+    "drizzle:push": "drizzle-kit push:sqlite"
   },
   "dependencies": {
     "@elysiajs/cors": "^0.7.1",
     "@elysiajs/swagger": "^0.7.3",
     "@libsql/client": "^0.3.5",
     "@lucia-auth/adapter-sqlite": "^2.0.1",
-    "drizzle-orm": "^0.28.6",
+    "drizzle-orm": "^0.29.1",
     "elysia": "latest",
     "lucia": "^2.7.5"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
     "bun-types": "latest",
-    "drizzle-kit": "^0.19.13"
+    "drizzle-kit": "^0.20.7"
   },
   "module": "src/index.js"
 }
