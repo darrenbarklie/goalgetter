@@ -1,11 +1,19 @@
 import { Elysia } from "elysia";
 import { cors } from "@elysiajs/cors";
 import { swagger } from "@elysiajs/swagger";
-import { drizzle } from "drizzle-orm/libsql";
 import { createClient } from "@libsql/client";
+import { drizzle } from "drizzle-orm/libsql";
+import { User } from "lucia";
 
 import { UserSignUp, signInUser, signUpUser } from "./auth";
-import { getAllUsers } from "./users/index";
+import {
+  UserCreation,
+  createUser,
+  deleteUserById,
+  readAllUsers,
+  readUserById,
+  updateUserById,
+} from "./users/index";
 import { getAllGoals } from "./goals/index";
 
 const app = new Elysia();
@@ -43,12 +51,18 @@ app.post("/auth/signup/email", ({ body }) => signUpUser(body as UserSignUp));
 app.post("/auth/signin", () => signInUser());
 
 // Users
-app.get("/users", () => getAllUsers());
-// app.get("/user/:id", ({ id }: User) => getUserById(id));
+app
+  .post("/user", ({ body }) => createUser(body as UserCreation))
+  .get("/user", () => readAllUsers())
+  .get("/user/:id", ({ params: { id } }) => readUserById(id))
+  .patch("/user/:id", ({ params: { id }, body }) =>
+    updateUserById({ id, body } as User)
+  )
+  .delete("/user/:id", ({ params: { id } }) => deleteUserById(id));
 // app.get("/users/goals", () => getAllUsersAndGoals());
 
 // Goals
-app.get("/goals", () => getAllGoals());
+app.get("/goal", () => getAllGoals());
 // app.get("/goal/:id", ({ id }: Goal) => getGoalById(id));
 
 // Middleware

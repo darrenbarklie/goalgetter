@@ -1,5 +1,4 @@
 import { auth } from "./lucia";
-import { LuciaError } from "lucia";
 
 export interface UserSignUp {
   emailAddress: string;
@@ -26,17 +25,12 @@ export const signUpUser = async ({ emailAddress, password }: UserSignUp) => {
       user: user,
     };
   } catch (error) {
-    if (error instanceof LuciaError) {
-      console.error(`Lucia error (user: ${emailAddress}): ${error.message}`);
-    } else {
-      console.error(
-        `Unexpected database error (user: ${emailAddress}): ${error}`
-      );
-    }
+    console.error(
+      `Unexpected database error (user: ${emailAddress}): ${error}`
+    );
     return {
       status: "error",
-      message:
-        "Cannot create user account. Contact support@goalgetter.io for assistance.",
+      message: "Cannot create user account.",
     };
   }
 };
