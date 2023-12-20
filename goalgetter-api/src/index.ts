@@ -41,7 +41,7 @@ app.get("/version", () => ({
 }));
 
 // Auth
-app.post("/auth/signup", ({ body }) => signUpUser(body as UserSignUp));
+app.post("/auth/signup/email", ({ body }) => signUpUser(body as UserSignUp));
 app.post("/auth/signin", () => signInUser());
 
 // Users

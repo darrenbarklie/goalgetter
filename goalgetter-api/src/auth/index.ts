@@ -1,7 +1,5 @@
-import { db } from "../index";
-
 import { auth } from "./lucia";
-import { LuciaError, User } from "lucia";
+import { LuciaError } from "lucia";
 
 export interface UserSignUp {
   emailAddress: string;
@@ -9,32 +7,36 @@ export interface UserSignUp {
 }
 
 export const signUpUser = async ({ emailAddress, password }: UserSignUp) => {
-  // console.log("Sign Up");
-  // console.log(emailAddress);
-  // console.log(password);
   try {
     const user = await auth.createUser({
       key: {
         providerId: "email",
-        providerUserId: "abc",
-        password: "123456",
+        providerUserId: emailAddress,
+        password: password,
       },
       attributes: {
-        emailAddress: emailAddress,
-        totalLogins: 0,
+        email_address: emailAddress,
+        total_logins: 0,
       }, // expects `Lucia.DatabaseUserAttributes`
     });
-
-    console.log("**********************");
-    console.log(user);
+    console.log(`Created user: ${user}`);
+    return {
+      status: "success",
+      user: user,
+    };
   } catch (error) {
-    if (
-      error instanceof LuciaError &&
-      error.message === `AUTH_DUPLICATE_KEY_ID`
-    ) {
-      // key already exists
+    if (error instanceof LuciaError) {
+      console.error(`Lucia error (user: ${emailAddress}): ${error.message}`);
+    } else {
+      console.error(
+        `Unexpected database error (user: ${emailAddress}): ${error}`
+      );
     }
-    console.error(`Unexpected database error: ${error}`);
+    return {
+      status: "error",
+      message:
+        "Cannot create user account. Contact support@goalgetter.io for assistance.",
+    };
   }
 };
 
