@@ -2,7 +2,7 @@
 import { auth } from "../auth/lucia";
 
 import { db } from "../index";
-import { User, user } from "../db/migrations/schema";
+import { User, user } from "../db/schema";
 // import { goals } from "../db/goal";
 
 export interface UserCreation {
@@ -77,10 +77,10 @@ export const updateUserById = async ({
   body: Partial<User>;
 }) => {
   const updateAttributes: any = {};
-  if (body.emailAddress !== undefined) {
+  if (body.emailAddress) {
     updateAttributes.email_address = body.emailAddress;
   }
-  if (body.totalLogins !== undefined) {
+  if (body.totalLogins) {
     updateAttributes.total_logins = body.totalLogins;
   }
 

@@ -4,44 +4,6 @@
   "version": "5",
   "dialect": "sqlite",
   "tables": {
-    "user": {
-      "name": "user",
-      "columns": {
-        "id": {
-          "autoincrement": false,
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "email_address": {
-          "autoincrement": false,
-          "name": "email_address",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "total_logins": {
-          "autoincrement": false,
-          "name": "total_logins",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "date_time_created": {
-          "default": "'sql`(CURRENT_TIMESTAMP)`'",
-          "autoincrement": false,
-          "name": "date_time_created",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        }
-      },
-      "compositePrimaryKeys": {},
-      "indexes": {},
-      "foreignKeys": {},
-      "uniqueConstraints": {}
-    },
     "user_key": {
       "name": "user_key",
       "columns": {
@@ -70,10 +32,10 @@
       "compositePrimaryKeys": {},
       "indexes": {},
       "foreignKeys": {
-        "user_key_user_id_user_id_fk": {
-          "name": "user_key_user_id_user_id_fk",
+        "user_key_user_id___old_push_user_id_fk": {
+          "name": "user_key_user_id___old_push_user_id_fk",
           "tableFrom": "user_key",
-          "tableTo": "user",
+          "tableTo": "__old_push_user",
           "columnsFrom": [
             "user_id"
           ],
@@ -121,10 +83,10 @@
       "compositePrimaryKeys": {},
       "indexes": {},
       "foreignKeys": {
-        "user_session_user_id_user_id_fk": {
-          "name": "user_session_user_id_user_id_fk",
+        "user_session_user_id___old_push_user_id_fk": {
+          "name": "user_session_user_id___old_push_user_id_fk",
           "tableFrom": "user_session",
-          "tableTo": "user",
+          "tableTo": "__old_push_user",
           "columnsFrom": [
             "user_id"
           ],
@@ -135,6 +97,44 @@
           "onUpdate": "no action"
         }
       },
+      "uniqueConstraints": {}
+    },
+    "user": {
+      "name": "user",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "email_address": {
+          "autoincrement": false,
+          "name": "email_address",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_logins": {
+          "autoincrement": false,
+          "name": "total_logins",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date_time_created": {
+          "default": "'2023-12-20T21:02:20.048Z'",
+          "autoincrement": false,
+          "name": "date_time_created",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
       "uniqueConstraints": {}
     }
   },
