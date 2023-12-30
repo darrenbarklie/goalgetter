@@ -28,6 +28,14 @@ RUN apt-get update -qq && \
 COPY --link package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod=false
 
+# Mount build time secrets
+ARG GOALGETTER_API_URL
+ENV VITE_GOALGETTER_API_URL $GOALGETTER_API_URL
+ARG TENANT_NAME
+ENV VITE_TENANT_NAME $TENANT_NAME
+ARG TENANT_NAME_DISPLAY
+ENV VITE_TENANT_NAME_DISPLAY $TENANT_NAME_DISPLAY
+
 # Copy application code
 COPY --link . .
 

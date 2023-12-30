@@ -31,4 +31,6 @@ Your app is ready to be deployed!
 
 ## Deployment
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+```zsh
+flyctl deploy --build-arg GOALGETTER_API_URL="https://goalgetter-api.fly.dev" --build-arg TENANT_NAME="harmony" --build-arg TENANT_NAME_DISPLAY="Harmony"
+```
