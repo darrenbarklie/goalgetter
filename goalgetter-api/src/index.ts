@@ -19,6 +19,11 @@ const client = createClient({
 });
 export const db = drizzle(client);
 
+// console.log("---------------------------------------------------");
+// console.log(process.env.APP_VERSION);
+// console.log(process.env.CORS_ALLOWED_DOMAINS);
+// console.log("---------------------------------------------------");
+
 app.use(
   cors({
     origin: (request: Request): boolean => {
@@ -26,7 +31,6 @@ app.use(
       if (!origin) {
         return false;
       }
-
       const allowedOrigins = Bun.env.CORS_ALLOWED_DOMAINS?.split(", ") || [];
       return allowedOrigins.includes(origin);
     },
@@ -45,11 +49,11 @@ app.get("/user", () => getAllUsers());
 app.get("/user/goals", () => getAllUsersAndGoals());
 
 // Goals
-app.get("/goal", () => getAllGoals());
+// app.get("/goal", () => getAllGoals());
 // app.get("/goal/:id", ({ id }: Goal) => getGoalById(id));
 
 // Middleware
-app.use(swagger());
+// app.use(swagger());
 
 // Serve
 app.listen(3001);
