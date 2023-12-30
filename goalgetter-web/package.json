@@ -1,6 +1,6 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
+  "name": "goalgetter-web",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "start": "vite",
@@ -8,7 +8,11 @@
     "build": "vite build",
     "serve": "vite preview"
   },
-  "license": "MIT",
+  "dependencies": {
+    "@solidjs/router": "^0.10.1",
+    "flowbite": "^2.2.1",
+    "solid-js": "^1.8.7"
+  },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.0",
     "@tailwindcss/typography": "^0.5.10",
@@ -19,10 +23,5 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.7",
     "vite-plugin-solid": "^2.8.0"
-  },
-  "dependencies": {
-    "@solidjs/router": "^0.10.1",
-    "flowbite": "^2.2.1",
-    "solid-js": "^1.8.7"
   }
 }

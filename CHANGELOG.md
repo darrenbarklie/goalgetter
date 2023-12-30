@@ -1,7 +1,19 @@
 # CHANGELOG
 
-## [v0.0.0h] 19 Dec 2023
+## [v0.0.1] 30 Dec 2023
 
+- Reconfigure Dockerfiles, dockerignore files
+- Deploy goalgetter-api to Fly.io
+- Deploy goalgetter-web to Fly.io
+- Configure build time env vars for web service
+- Configure run time env vars for api service
+- Test multi-tenancy functionality deployed
+- Update deployment commands
+- Reconfigure Turso integration
+
+## [v0.0.0j] 19 Dec 2023
+
+- Migrate goalgetter-web to Solid v1.8.7
 - Integrate Solid Router v0.10.1
 - Configure CORS with environment variables
 - Fetch with Solid `createResource` API
