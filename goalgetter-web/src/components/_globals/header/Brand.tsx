@@ -1,18 +1,14 @@
 import { A } from "@solidjs/router";
 
-export default function Brand() {
-  const tenantName = import.meta.env.VITE_TENANT_NAME_DISPLAY;
+import { currentTenant } from "~/config/tenants/tenants";
 
+export default function Brand() {
   return (
     <>
       <A href="/" class="flex items-center">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          class="mr-3 h-6 sm:h-9"
-          alt="Flowbite Logo"
-        />
+        <span class="block w-8 h-8 mr-3 bg-primary-600 rounded">&nbsp;</span>
         <span class="self-center text-xl font-semibold whitespace-nowrap">
-          {tenantName || "GoalGetter"}
+          {currentTenant.nameDisplay}
         </span>
       </A>
     </>

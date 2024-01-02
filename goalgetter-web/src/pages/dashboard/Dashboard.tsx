@@ -1,28 +1,12 @@
-export default function Home() {
-  // const changeTheme = (theme: string) => {
-  //   document.querySelector("html")?.setAttribute("data-theme", theme);
-  // };
+import { currentTenant } from "~/config/tenants/tenants";
 
+export default function Home() {
   return (
     <>
-      <div class="">
-        <div>
-          <h1 class="text-display-1 text-primary-800">TEST TEXT</h1>
-          <h1 class="text-display-1 text-primary-300">TEST TEXT</h1>
-
-          {/* <button
-            class="border py-2 px-8 bg-buttons text-typography m-2"
-            onClick={() => changeTheme("light")}
-          >
-            Theme Light
-          </button>
-          <button
-            class="py-2 px-8 bg-buttons text-typography m-2"
-            onClick={() => changeTheme("dark")}
-          >
-            Theme Dark
-          </button> */}
-        </div>
+      <div class="container">
+        <h1 class="text-display-1 text-primary-800 text-red-500">
+          {currentTenant.nameDisplay}
+        </h1>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import { createResource } from "solid-js";
+import BannerEnvironment from "./BannerEnvironment";
 
 export default function Footer() {
   const [version] = createResource(async () => {
@@ -14,11 +15,10 @@ export default function Footer() {
 
   return (
     <>
-      <div class="container">
+      <BannerEnvironment />
 
-        {import.meta.env.MODE === "development" && <div>DEV DEV DEV</div>}
-
-        <div class="copyright">
+      <div class="container flex justify-between pt-1 pb-2">
+        <small class="copyright">
           © 2023{" "}
           <a
             href="https://craftapplied.com"
@@ -27,10 +27,15 @@ export default function Footer() {
           >
             Crafted Solutions Limited
           </a>
-        </div>
+        </small>
 
-        <div>
-          <small>{version()?.version}</small>
+        <div class="flex flex-wrap gap-2">
+          <small class="mono">{version()?.version}</small>
+          <small>
+            <a href="/changelog" class="underline">
+              CHANGELOG
+            </a>
+          </small>
         </div>
       </div>
     </>

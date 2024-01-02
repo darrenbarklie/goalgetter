@@ -11,6 +11,8 @@ import Goals from "./pages/goals/Goals";
 import Community from "./pages/community/Community";
 import About from "./pages/about/About";
 import Account from "./pages/account/Account";
+
+import Changelog from "./pages/ancillary/Changelog";
 import Ui from "./pages/ui/Ui";
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -34,6 +36,8 @@ render(
       <Route path="/community" component={Community} />
       <Route path="/about" component={About} />
       <Route path="/account" component={Account} />
+
+      <Route path="/changelog" component={Changelog} />
       <Route path="/ui" component={Ui} />
     </Router>
   ),
