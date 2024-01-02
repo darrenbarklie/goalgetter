@@ -13,7 +13,8 @@ export default function Layout(props: ParentProps) {
   switch (
     import.meta.env.MODE === "production"
       ? import.meta.env.VITE_TENANT_NAME
-      : tenants[2].name
+      : // NOTE: Change this value for dev override
+        tenants[2].name
   ) {
     case "goalgetter":
       import("../../../styles/goalgetter.css");

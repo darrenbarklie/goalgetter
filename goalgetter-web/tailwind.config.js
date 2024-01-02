@@ -101,11 +101,12 @@ const customColours = {
   },
 };
 
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
+export default {
+  content: ["./src/**/*.{html,js,jsx,md,mdx,ts,tsx}"],
+  darkMode: ["class"],
   theme: {
     ...defaultStyles(customColours),
     extend: {},
   },
-  plugins: [require("flowbite/plugin")],
+  presets: [require("./ui.preset.js")],
 };

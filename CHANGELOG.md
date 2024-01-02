@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [v0.0.2] 2 Jan 2023
+
+- Add global theme override for development
+- Configure sticky footer
+- Setup development environment flag
+- Remove Flowbite UI
+- Install and configure Solid UI
+
 ## [v0.0.1] 30 Dec 2023
 
 - Reconfigure Dockerfiles, dockerignore files

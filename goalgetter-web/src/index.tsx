@@ -4,7 +4,6 @@ import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 
 const root = document.getElementById("root");
-import "flowbite";
 
 import Layout from "./components/_globals/layout/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
