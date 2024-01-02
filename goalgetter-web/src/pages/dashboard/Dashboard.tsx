@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <>
-      <div class="h-screen grid place-items-center bg-primary-100">
+      <div class="">
         <div>
           <h1 class="text-display-1 text-primary-800">TEST TEXT</h1>
           <h1 class="text-display-1 text-primary-300">TEST TEXT</h1>

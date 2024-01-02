@@ -14,6 +14,8 @@ export default function Footer() {
 
   return (
     <>
+      {import.meta.env.MODE === "development" && <div>DEV DEV DEV</div>}
+
       <div class="copyright">
         © 2023{" "}
         <a

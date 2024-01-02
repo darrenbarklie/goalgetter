@@ -20,7 +20,7 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 const App = (props: ParentProps) => (
-  <div id="app">
+  <div id="app" class="flex flex-col min-h-screen">
     <Layout>{props.children}</Layout>
   </div>
 );
