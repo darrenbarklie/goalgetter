@@ -17,25 +17,27 @@ export default function Footer() {
     <>
       <BannerEnvironment />
 
-      <div class="container flex justify-between pt-1 pb-2">
-        <small class="copyright">
-          © 2023{" "}
-          <a
-            href="https://craftapplied.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Crafted Solutions Limited
-          </a>
-        </small>
-
-        <div class="flex flex-wrap gap-2">
-          <small class="mono">{version()?.version}</small>
-          <small>
-            <a href="/changelog" class="underline">
-              CHANGELOG
+      <div class="border-t-gray-88 border-t-6">
+        <div class="container flex justify-between pt-2 pb-2">
+          <small class="copyright">
+            © 2023{" "}
+            <a
+              href="https://craftapplied.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Crafted Solutions Limited
             </a>
           </small>
+
+          <div class="flex flex-wrap gap-2">
+            <small class="mono">{version()?.version}</small>
+            <small>
+              <a href="/changelog" class="underline">
+                CHANGELOG
+              </a>
+            </small>
+          </div>
         </div>
       </div>
     </>

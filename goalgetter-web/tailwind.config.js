@@ -133,5 +133,6 @@ export default {
       },
     },
   },
+  plugins: [require("@tailwindcss/typography")],
   presets: [require("./ui.preset.js")],
 };

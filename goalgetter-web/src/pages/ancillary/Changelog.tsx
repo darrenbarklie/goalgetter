@@ -1,4 +1,3 @@
-import { ParentProps } from "solid-js";
 import PageAncillary from "./PageAncillary";
 
 export default function Changelog() {
@@ -17,6 +16,10 @@ export default function Changelog() {
               <li>Install Solid Icons</li>
               <li>Debug Vite config resolve alias "~" to project root</li>
               <li>Setup Tailwind global container and breakpoints</li>
+              <li>Integrate `BannerEnvironment` component with logic</li>
+              <li>Improve `Footer` component content and layout</li>
+              <li>Add CHANGELOG page and backlog content</li>
+              <li>Integrate Tailwind Typography plugin, configure `prose`</li>
             </ul>
           </section>
 

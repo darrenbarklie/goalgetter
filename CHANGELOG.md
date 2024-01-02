@@ -10,6 +10,10 @@
 - Install Solid Icons
 - Debug Vite config resolve alias "~" to project root
 - Setup Tailwind global container and breakpoints
+- Integrate `BannerEnvironment` component with logic
+- Improve `Footer` component content and layout
+- Add CHANGELOG page and backlog content
+- Integrate Tailwind Typography plugin, configure `prose`
 
 ## [v0.0.1] 30 Dec 2023
 
