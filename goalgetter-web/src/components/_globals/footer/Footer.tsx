@@ -14,21 +14,24 @@ export default function Footer() {
 
   return (
     <>
-      {import.meta.env.MODE === "development" && <div>DEV DEV DEV</div>}
+      <div class="container">
 
-      <div class="copyright">
-        © 2023{" "}
-        <a
-          href="https://craftapplied.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Crafted Solutions Limited
-        </a>
-      </div>
+        {import.meta.env.MODE === "development" && <div>DEV DEV DEV</div>}
 
-      <div>
-        <small>{version()?.version}</small>
+        <div class="copyright">
+          © 2023{" "}
+          <a
+            href="https://craftapplied.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Crafted Solutions Limited
+          </a>
+        </div>
+
+        <div>
+          <small>{version()?.version}</small>
+        </div>
       </div>
     </>
   );

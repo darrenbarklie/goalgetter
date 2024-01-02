@@ -11,10 +11,12 @@ import Goals from "./pages/goals/Goals";
 import Community from "./pages/community/Community";
 import About from "./pages/about/About";
 import Account from "./pages/account/Account";
+import Ui from "./pages/ui/Ui";
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(
-    "Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?"
+    `Root element not found. Did you forget to add it to your index.html?
+     Or maybe the id attribute got misspelled?`
   );
 }
 
@@ -32,6 +34,7 @@ render(
       <Route path="/community" component={Community} />
       <Route path="/about" component={About} />
       <Route path="/account" component={Account} />
+      <Route path="/ui" component={Ui} />
     </Router>
   ),
   root!

@@ -7,6 +7,9 @@
 - Setup development environment flag
 - Remove Flowbite UI
 - Install and configure Solid UI
+- Install Solid Icons
+- Debug Vite config resolve alias "~" to project root
+- Setup Tailwind global container and breakpoints
 
 ## [v0.0.1] 30 Dec 2023
 
